@@ -1,4 +1,3 @@
-
 const User = require('../models/user');
 
 module.exports.renderRegister = (req, res) => {
@@ -34,6 +33,7 @@ module.exports.login = (req, res) => {
 
 module.exports.logout = (req, res) => {
     req.logout();
+    // req.session.destroy();
     req.flash('success', "Goodbye!");
     res.redirect('/campgrounds');
 }
